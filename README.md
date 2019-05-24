@@ -1,6 +1,6 @@
 # vue-oxford
 
-A component that renders components in a comma-separated list, with an Oxford comma.
+A Vue component that renders components in a comma-separated list, with an Oxford comma.
 
 ## Installation
 
