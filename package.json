@@ -1,0 +1,7 @@
+{
+  "name": "vue-oxford",
+  "version": "1.0.0",
+  "description": "A component that renders components in a comma-separated list, with an Oxford comma.",
+  "main": "index.js",
+  "license": "MIT"
+}
