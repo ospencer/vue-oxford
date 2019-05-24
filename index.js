@@ -1,7 +1,11 @@
 export default {
   name: 'VueOxford',
   render (h) {
-    const children = this.$slots.default || []
+    let children = (this.$slots.default || []).filter(node => {
+      if (typeof node.text === 'string' && !node.text.trim()) return false
+      if (node.isComment) return false
+      return true
+    })
 
     let components = []
     if (children.length <= 1) {

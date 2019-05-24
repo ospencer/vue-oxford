@@ -69,4 +69,24 @@ describe('VueOxford', () => {
 
     expect(wrapper.text()).toEqual('Some things are .')
   })
+
+  it("doesn't consider comments or whitespace", () => {
+    const Component = { 
+      template: `
+        <oxford>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span><span>4</span>
+          <!-- This is a comment -->
+          <span>5</span>
+        </oxford>
+      `
+    }
+
+    const wrapper = mount(Component, {
+      localVue
+    })
+
+    expect(wrapper.text()).toEqual('1, 2, 3, 4, and 5')
+  })
 })
