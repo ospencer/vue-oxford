@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: 'VueOxford',
   render (h) {
     let children = (this.$slots.default || []).filter(node => {
