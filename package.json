@@ -1,6 +1,6 @@
 {
   "name": "vue-oxford",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A Vue component that renders components in a comma-separated list, with an Oxford comma.",
   "main": "index.js",
   "license": "MIT",
