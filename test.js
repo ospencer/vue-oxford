@@ -1,4 +1,4 @@
-import VueOxford from './index.js'
+import VueOxford, { join } from './index.js'
 import { mount, createLocalVue } from '@vue/test-utils'
 
 const localVue = createLocalVue()
@@ -88,5 +88,29 @@ describe('VueOxford', () => {
     })
 
     expect(wrapper.text()).toEqual('1, 2, 3, 4, and 5')
+  })
+})
+
+describe('join', () => {
+  it('handles an empty array', () => {
+    expect(join()).toEqual('')
+    expect(join([])).toEqual('')
+  })
+
+  it('joins one item', () => {
+    expect(join(['red'])).toEqual('red')
+  })
+
+  it('joins two items', () => {
+    expect(join(['red', 'blue'])).toEqual('red and blue')
+  })
+
+  it('joins three items', () => {
+    expect(join(['red', 'blue', 'green'])).toEqual('red, blue, and green')
+  })
+
+  it('joins many items', () => {
+    expect(join(['red', 'blue', 'green', 'pink'])).toEqual('red, blue, green, and pink')
+    expect(join(['red', 'blue', 'green', 'pink', 'yellow', 'aqua'])).toEqual('red, blue, green, pink, yellow, and aqua')
   })
 })

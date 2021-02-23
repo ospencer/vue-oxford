@@ -57,3 +57,11 @@ renders as:
 ```text
 My favorite colors are red, blue, green, and pink.
 ```
+
+It can also be used as a standalone function:
+
+```js
+import { join } from 'vue-oxford'
+
+join(['red', 'blue', 'green', 'pink'])
+```

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: 'VueOxford',
   render (h) {
     let children = (this.$slots.default || []).filter(node => {
@@ -26,5 +26,21 @@ module.exports = {
     }
 
     return h('span', components)
+  }
+}
+
+export const join = (strings=[]) => {
+  switch (strings.length) {
+    case 0: return ''
+    case 1: return strings[0] || ''
+    case 2: {
+      const [first, second] = strings
+      return `${first} and ${second}`
+    }
+    default: {
+      const start = strings.slice(0, -1)
+      const end = strings[strings.length - 1]
+      return `${start.join(', ')}, and ${end}`
+    }
   }
 }
