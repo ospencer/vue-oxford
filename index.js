@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: 'VueOxford',
   render (h) {
     let children = (this.$slots.default || []).filter(node => {
@@ -29,7 +29,7 @@ export default {
   }
 }
 
-export const join = (strings=[]) => {
+module.exports.join = (strings=[]) => {
   switch (strings.length) {
     case 0: return ''
     case 1: return strings[0] || ''
