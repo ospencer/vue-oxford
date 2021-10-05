@@ -29,18 +29,18 @@ module.exports = {
   }
 }
 
-module.exports.join = (strings=[]) => {
+module.exports.join = (strings=[], conjunction='and') => {
   switch (strings.length) {
     case 0: return ''
     case 1: return strings[0] || ''
     case 2: {
       const [first, second] = strings
-      return `${first} and ${second}`
+      return `${first} ${conjunction} ${second}`
     }
     default: {
       const start = strings.slice(0, -1)
       const end = strings[strings.length - 1]
-      return `${start.join(', ')}, and ${end}`
+      return `${start.join(', ')}, ${conjunction} ${end}`
     }
   }
 }

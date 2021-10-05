@@ -65,3 +65,11 @@ import { join } from 'vue-oxford'
 
 join(['red', 'blue', 'green', 'pink'])
 ```
+
+With an optional `conjunction` parameter:
+
+```js
+import { join } from 'vue-oxford'
+
+join(['red', 'blue', 'green', 'pink'], 'or')
+```

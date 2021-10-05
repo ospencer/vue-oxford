@@ -113,4 +113,10 @@ describe('join', () => {
     expect(join(['red', 'blue', 'green', 'pink'])).toEqual('red, blue, green, and pink')
     expect(join(['red', 'blue', 'green', 'pink', 'yellow', 'aqua'])).toEqual('red, blue, green, pink, yellow, and aqua')
   })
+
+  it('joins with conjunction', () => {
+    expect(join([], 'or')).toEqual('')
+    expect(join(['red', 'blue'], 'or')).toEqual('red or blue')
+    expect(join(['red', 'blue', 'green'], 'or')).toEqual('red, blue, or green')
+  })
 })
